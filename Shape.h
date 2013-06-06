@@ -32,8 +32,13 @@ struct Shape
     ePoly,
     eCount
   };
+<<<<<<< HEAD
   
   Shape() {}
+=======
+
+  Shape( ) {}
+>>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
   virtual Shape *Clone( void ) const = 0;
   virtual void Initialize( void ) = 0;
   virtual void ComputeMass( real density ) = 0;
@@ -43,14 +48,17 @@ struct Shape
 
   Body *body;
 
-  union
-  {
-    // For circle shape
-    real radius;
+  // For circle shape
+  real radius;
 
+<<<<<<< HEAD
     // For Polygon shape
       Mat2 u; // Orientation matrix from model to world
   };
+=======
+  // For Polygon shape
+  Mat2 u; // Orientation matrix from model to world
+>>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 };
 
 struct Circle : public Shape
