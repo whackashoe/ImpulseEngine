@@ -22,8 +22,6 @@
 
 Clock::Clock( )
 {
-<<<<<<< HEAD
-=======
 #ifdef WIN32
   // Assign to a single processor
   SetThreadAffinityMask( GetCurrentThread( ), 1 );
@@ -32,7 +30,6 @@ Clock::Clock( )
   QueryPerformanceFrequency( &m_freq );
 #endif
 
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
   // Setup initial times
   Start( );
   Stop( );
@@ -45,43 +42,16 @@ Clock::~Clock( )
 // Records current time in start variable
 void Clock::Start( void )
 {
-<<<<<<< HEAD
-  m_start = hr_clock::now();
-=======
 #ifdef WIN32
   QueryPerformanceCounter( &m_start );
 #else
   m_start = hr_clock::now();
 #endif
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 }
 
 // Records current time in stop variable
 void Clock::Stop( void )
 {
-<<<<<<< HEAD
-  m_stop = hr_clock::now();
-}
-
-// Get current time from previous Start call
-long long Clock::Elapsed( void )
-{
-  m_current = hr_clock::now();
-  return std::chrono::duration_cast<clock_freq>(m_current - m_start).count();
-}
-
-// Time between last Start and Stop calls
-long long Clock::Difference( void )
-{
-  return std::chrono::duration_cast<clock_freq>(m_stop - m_start).count();
-}
-
-// Get the current clock count
-long long Clock::Current( void )
-{
-  m_current = hr_clock::now();
-  return std::chrono::duration_cast<clock_freq>(m_current.time_since_epoch()).count();
-=======
 #ifdef WIN32
   QueryPerformanceCounter( &m_stop );
 #else
@@ -133,5 +103,4 @@ long long Clock::Current( void )
   m_current = hr_clock::now();
   return std::chrono::duration_cast<clock_freq>(m_current.time_since_epoch()).count();
 #endif
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 }

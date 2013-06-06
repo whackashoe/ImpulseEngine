@@ -17,21 +17,15 @@
       3. This notice may not be removed or altered from any source distribution.
 */
 
-<<<<<<< HEAD
-=======
 #ifndef CLOCK_H
 #define CLOCK_H
 
 #ifndef WIN32
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 #include <chrono>
 
 typedef std::chrono::high_resolution_clock hr_clock;
 typedef std::chrono::nanoseconds clock_freq;
-<<<<<<< HEAD
-=======
 #endif
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 
 class Clock
 {
@@ -46,15 +40,6 @@ public:
   void Stop( void );
 
   // Time since last Start call
-<<<<<<< HEAD
-  long long Elapsed( void );
-
-  // Time between last Start and Stop calls
-  long long Difference( void );
-
-  // Get the current clock count
-  long long Current( void );
-=======
 #ifdef WIN32
   f32 Elapsed( void );
 #else
@@ -74,16 +59,9 @@ public:
 #else
   long long Current( void );
 #endif
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 
 #ifdef WIN32
 private:
-<<<<<<< HEAD
-  hr_clock::time_point m_start;
-  hr_clock::time_point m_stop;
-  hr_clock::time_point m_current;
-};
-=======
   LARGE_INTEGER m_freq;
   LARGE_INTEGER m_start, m_stop, m_current;
 
@@ -97,4 +75,3 @@ private:
 };
 
 #endif // CLOCK_H
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c

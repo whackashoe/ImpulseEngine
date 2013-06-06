@@ -32,20 +32,12 @@
 #include <Windows.h>
 #endif
 
-<<<<<<< HEAD
-
-=======
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 #undef min
 #undef max
 
 #include <cstring> // strlen, memcpy, etc.
 #include <cstdlib> // exit
-<<<<<<< HEAD
-#include <cfloat>
-=======
 #include <cfloat>  // FLT_MAX
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 #include <vector>
 
 #include "glut.h"

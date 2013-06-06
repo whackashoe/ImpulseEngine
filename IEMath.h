@@ -34,11 +34,7 @@ typedef signed int int32;
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned int uint32;
-<<<<<<< HEAD
-#ifdef WIN32 //these types are not standard, only exist in windows
-=======
 #ifdef WIN32 // these types are not standard, only exist in windows
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 typedef __int64 int64;
 typedef unsigned __int64 uint64;
 #endif
@@ -318,6 +314,6 @@ inline bool BiasGreaterThan( real a, real b )
 
 const f32 gravityScale = 5.0f;
 const Vec2 gravity( 0, 10.0f * gravityScale );
-const double dt = 1.0f / 60.0f;
+const float dt = 1.0f / 60.0f;
 
 #endif // IEMATH_H

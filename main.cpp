@@ -22,11 +22,7 @@
 #define ESC_KEY 27
 
 Scene scene( 1.0f / 60.0f, 10 );
-<<<<<<< HEAD
-Clock pclock;
-=======
 Clock g_Clock;
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 bool frameStepping = false;
 bool canStep = false;
 
@@ -108,10 +104,6 @@ void PhysicsLoop( void )
   RenderString( 1, 4, "Right click to spawn a circle" );
 
   static double accumulator = 0;
-<<<<<<< HEAD
-  accumulator += pclock.Elapsed( ) / static_cast<double>(std::chrono::duration_cast<clock_freq>(std::chrono::seconds(1)).count());
-  pclock.Start( );
-=======
 
   // Different time mechanisms for Linux and Windows
 #ifdef WIN32
@@ -121,7 +113,6 @@ void PhysicsLoop( void )
 #endif
 
   g_Clock.Start( );
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 
   accumulator = Clamp( 0.0f, 0.1f, accumulator );
   while(accumulator >= dt)
@@ -139,11 +130,7 @@ void PhysicsLoop( void )
     accumulator -= dt;
   }
 
-<<<<<<< HEAD
-  pclock.Stop( );
-=======
   g_Clock.Stop( );
->>>>>>> abf18e24baf7e48e8dd9b55c4fab2512ff5d7c7c
 
   scene.Render( );
 
